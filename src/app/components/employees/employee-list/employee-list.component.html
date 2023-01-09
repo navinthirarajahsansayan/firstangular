@@ -1,0 +1,33 @@
+<!--employee list eka call kalama display wena tika danne me file eke-->
+<div class="container my-5">
+    <h1 class="mb-3">Employees</h1>
+
+    <table class="table" *ngIf="employees && employees.length > 0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let index of employees">
+                <td>{{index.id}}</td>
+                <td>{{index.name}}</td>
+                <td>{{index.email}}</td>
+                <td>{{index.phone}}</td>
+                <td>{{index.salary}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!employees || employees.length <= 0 ">No Employees Found</p>
+</div>
+
+<div class="column">
+    <div class="d-grid gap-2 col-2 mx-auto">
+        <button class="btn btn-primary" type="button">Add Employees</button>
+        <button class="btn btn-danger" type="button">Delete Employees</button>
+    </div>
+</div>
